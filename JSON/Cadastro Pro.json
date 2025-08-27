@@ -1,0 +1,71 @@
+{
+    "app_slug": "ns-b2b",
+    "app_id": 4982,
+    "client_secret": "PVuADH92ptLCNp9l4j4zjeClCXNxKaNn4wDetLU6Or20omLR",
+    "name": {
+        "pt": "Cadastro Personalizado Pro",
+        "en": "Custom Registration Pro",
+        "es": "Registro Personalizado Pro"
+    },
+    "short_description": {
+        "pt": "Aprimore e segmente seus clientes. Funcionalidades que aumentam suas vendas",
+        "en": "Enhance and segment your customers. Features that increase your sales",
+        "es": "Mejora y segmenta tus clientes. Funcionalidades que aumentan tus ventas"
+    },
+    "description": {
+        "pt": "Aprimore o relacionamento com seus clientes por meio de segmentações inteligentes e estratégias personalizadas. Com funcionalidades avançadas, você potencializa suas vendas, oferece experiências mais relevantes e impulsiona os resultados do seu negócio.",
+        "en": "Enhance your relationship with customers through intelligent segmentation and personalized strategies. With advanced features, you boost your sales, offer more relevant experiences and drive your business results.",
+        "es": "Mejora tu relación con los clientes a través de segmentaciones inteligentes y estrategias personalizadas. Con funcionalidades avanzadas, potencias tus ventas, ofreces experiencias más relevantes e impulsas los resultados de tu negocio."
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/4982-pt_BR-cadastro-personalizado.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-b2b:3105",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem cadastro-personalizado-pro?q=huapps"
+    },
+    "videos": {
+        "presentation": "https://www.youtube.com/watch?v=U9gWztjXkgk&list=PL9K-UrspkIuPg7AXpJpsteqYjNZR0Xi_f&index=1&pp=iAQB",
+        "tutorials": {
+            "pt": "https://youtube.com/playlist?list=PL9K-UrspkIuPg7AXpJpsteqYjNZR0Xi_f&si=bevpuQ_Qa4jKxs4Q",
+            "es": "https://youtube.com/playlist?list=PL9K-UrspkIuPg7AXpJpsteqYjNZR0Xi_f&si=bevpuQ_Qa4jKxs4Q"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 49.90,
+        "usd": 8.75,
+        "ars": 9073.0,
+        "mxn": 180.14,
+        "cop": 33267,
+        "clp": 7006
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o Cadastro Personalizado PRO e para que ele serve?",
+            "answer": "O Cadastro Personalizado PRO é um aplicativo que permite criar formulários totalmente customizados para sua loja Nuvemshop. Com ele, você pode adicionar campos específicos, aplicar máscaras e validações, controlar cadastros por documento e até integrar uploads de arquivos ao Dropbox, tornando o processo de cadastro mais flexível e adequado ao seu negócio."
+        },
+        {
+            "question": "Quais tipos de personalização posso aplicar nos formulários?",
+            "answer": "Você pode adicionar diferentes tipos de campos (texto, e-mail, telefone, upload de arquivos, seleção, checkbox, entre outros), definir se são obrigatórios ou não, aplicar máscaras (como CPF, CNPJ, CEP e telefone), validar dados com funções JavaScript e até configurar eventos como onBlur para verificações em tempo real. Também é possível personalizar mensagens, botões, cores, popups iniciais e redirecionamentos após o cadastro (inclusive para WhatsApp)."
+        },
+        {
+            "question": "Onde o formulário pode ser exibido na loja?",
+            "answer": "O formulário pode ser exibido em uma página extra da Nuvemshop, diretamente no checkout ou em um popup inicial na entrada da loja. Além disso, há uma prévia no painel do app que mostra como ele ficará no layout da sua loja, ajudando a ajustar as configurações antes de salvar."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}

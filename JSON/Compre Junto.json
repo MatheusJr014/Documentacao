@@ -1,0 +1,71 @@
+{
+    "app_slug": "ns-compre-junto",
+    "app_id": 5776,
+    "client_secret": "c1ae348eb582f58d2ce87f86d78e5f43b28449fc0fa4c0c9",
+    "name": {
+        "pt": "Compre Junto",
+        "en": "Buy Together",
+        "es": "Compra Junto"
+    },
+    "short_description": {
+        "pt": "Aumente seu ticket médio! Exiba Kits ou Ofertas de Compre Junto, sem limite de uso.",
+        "en": "Increase your average ticket! Display Buy Together Kits or Offers, with unlimited use.",
+        "es": "¡Aumenta tu ticket promedio! Muestra Kits u Ofertas de Compra Junto, sin límite de uso."
+    },
+    "description": {
+        "pt": "Aumente o ticket médio da sua loja exibindo Kits e Ofertas de Compre Junto, com uso ilimitado e máximo potencial de vendas.",
+        "en": "Increase your store's average ticket by displaying Buy Together Kits and Offers, with unlimited use and maximum sales potential.",
+        "es": "Aumenta el ticket promedio de tu tienda mostrando Kits y Ofertas de Compra Junto, con uso ilimitado y máximo potencial de ventas."
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/5776-pt_BR-compre-junto2.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-compre-junto:3102",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/compre-junto-pro-huapps?q=huapps"
+    },
+    "videos": {
+        "presentation": "https://youtu.be/X-Gj7XdgeEM?si=CCKN1LSzLLIxM432",
+        "tutorials": {
+            "pt": "https://youtube.com/playlist?list=PL9K-UrspkIuOxPczMLcWAxK08BRfdNogz&si=9BZKFO_jDraUotDu",
+            "es": "https://youtube.com/playlist?list=PL9K-UrspkIuOxPczMLcWAxK08BRfdNogz&si=9BZKFO_jDraUotDu"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 79.90,
+        "usd": 13.09,
+        "ars": 13579.40,
+        "mxn": 271.14,
+        "cop": 56977.72,
+        "clp": 13251.10
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o Compre Junto PRO e qual a sua função?",
+            "answer": "O Compre Junto PRO é um aplicativo que permite criar kits de produtos personalizados ou ofertas de compre junto na sua loja. Ele ajuda a aumentar o ticket médio ao incentivar a compra combinada de itens, exibindo os kits de forma atrativa diretamente nas páginas de produtos ou no carrinho"
+        },
+        {
+            "question": "Posso personalizar como os kits são exibidos e configurados?",
+            "answer": "Sim. O app oferece diversas opções, como transformar o grupo em um kit de produto, aplicar descontos percentuais ou em valor fixo, definir preço promocional ou recorrente, exibir seletor de quantidades, limitar a quantidade de itens e até mesmo agrupar o kit como um único produto no carrinho."
+        },
+        {
+            "question": "Onde posso gerenciar meus kits e quais ações estão disponíveis?",
+            "answer": "Todos os grupos criados ficam na seção Meus Grupos de Produtos, onde você pode ativar, pausar, editar ou excluir kits. Além disso, é possível buscar pelo nome do grupo, aplicar filtros por tipo de exibição ou situação e criar novos kits diretamente pela Dashboard do aplicativo."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}

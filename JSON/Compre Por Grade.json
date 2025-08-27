@@ -1,0 +1,70 @@
+{
+    "app_slug": "ns-atacarejo-pro",
+    "app_id": 12400,
+    "client_secret": "628bced48c8f0f29bdb5059ec192202cdba8c46a89c13f4f",
+    "name": {
+        "pt": "Compre Por Grade",
+        "en": "Buy by Grid",
+        "es": "Compra por Cuadrícula"
+    },
+    "short_description": {
+        "pt": "Facilite compras no atacado com visualização em grade, seleções rápidas e personalização total.",
+        "en": "Facilitate wholesale purchases with grid visualization, quick selections and total customization.",
+        "es": "Facilita las compras al por mayor con visualización en cuadrícula, selecciones rápidas y personalización total."
+    },
+    "description": {
+        "pt": "Facilite as compras no atacado com uma exibição em grade intuitiva, seleções rápidas e total personalização, garantindo praticidade e eficiência para seus clientes.",
+        "en": "Facilitate wholesale purchases with an intuitive grid display, quick selections and total customization, ensuring convenience and efficiency for your customers.",
+        "es": "Facilita las compras al por mayor con una exhibición en cuadrícula intuitiva, selecciones rápidas y personalización total, garantizando practicidad y eficiencia para tus clientes."
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/12400-pt_BR-copmpre%20por%20grade.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-atacarejo-pro:3112",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/compra-por-grade-pro?q=huapps"
+    },
+    "videos": {
+        "presentation": "https://youtu.be/fL9UZPOUsx8?si=UjQU4K8pM3WzVaq4",
+        "tutorials": {
+            "pt": "https://youtube.com/playlist?list=PL9K-UrspkIuNe76v85dthetdLGHBH8kQz&si=lyVNarUdDfqpo1tY",
+            "es": "https://youtube.com/playlist?list=PL9K-UrspkIuNe76v85dthetdLGHBH8kQz&si=lyVNarUdDfqpo1tY"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 39.90,
+        "ars": 6865.00,
+        "mxn": 135.10,
+        "cop": 28368.00,
+        "clp": 6645.00
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o app Compre por Grade e para que ele serve?",
+            "answer": "O Compre por Grade facilita a compra de produtos com múltiplas variações, exibindo todas as opções em uma única tabela organizada. Isso torna o processo de escolha e adição ao carrinho mais rápido e prático para o cliente."
+        },
+        {
+            "question": "Posso personalizar a aparência e os textos do app na minha loja?",
+            "answer": "Sim. O app permite escolher entre três temas (Padrão, Tabela e Vitrine), além de opções como exibir variações por cor, miniaturas de fotos e rolagem vertical. Também é possível editar os textos exibidos no botão e nas mensagens do app."
+        },
+        {
+            "question": "Onde o Compre por Grade aparece na loja e como posso configurá-lo?",
+            "answer": "O app pode ser ancorado em diferentes partes da página de produto. A configuração é feita diretamente na aba principal do app, na seção Elementos Âncora. Caso tenha dificuldade, nossa equipe de suporte pode auxiliar na definição do melhor local para exibição."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}

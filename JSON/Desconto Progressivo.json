@@ -1,0 +1,73 @@
+{
+        "_id": "-",
+        "app_slug": "ns-desconto-por-qtd",
+        "app_id": 15119,
+        "client_secret": "fc5276b6b542d14a41684f8180522f11fc8118d209e95a5c",
+        "name": {
+            "pt": "Desconto Progressivo",
+            "en": "Progressive Discount",
+            "es": "Descuento Progresivo"
+        },
+        "short_description": {
+            "pt": "Apresente os descontos por quantidade de forma customizada e destacando as melhores opções",
+            "en": "Present quantity-based discounts in a customized way, highlighting the best options",
+            "es": "Presenta los descuentos por cantidad de forma personalizada, destacando las mejores opciones"
+        },
+        "description": {
+            "pt": "O Desconto Progressivo Huapps é um aplicativo para lojistas da Nuvemshop que aumenta o ticket médio e impulsiona vendas oferecendo descontos por quantidade, incentivando compras em maior volume. Com instalação simples e gerenciamento direto pelo painel da Nuvemshop, ele utiliza elementos visuais estratégicos como uma barra de progresso interativa na página do produto, mostrando o preço original, o valor com desconto e a economia obtida, além de destacar automaticamente a opção mais vantajosa para o cliente. Disponível com teste gratuito de 7 dias, a ferramenta facilita a decisão de compra e promove resultados rápidos por meio de comunicação visual eficaz.",
+            "en": "The Desconto Progressivo Huapps is an app for Nuvemshop store owners that increases average order value and boosts sales by offering quantity-based discounts, encouraging customers to buy in larger volumes. With easy installation and management directly from the Nuvemshop dashboard, it uses strategic visual elements such as an interactive progress bar on the product page, showing the original price, discounted price, and savings, as well as automatically highlighting the most advantageous option for the customer. Available with a 7-day free trial, the tool makes purchasing decisions easier and delivers quick results through effective visual communication",
+            "es": "El Descuento Progresivo Huapps es una aplicación para los comerciantes de Nuvemshop que aumenta el valor medio del pedido y potencia las ventas ofreciendo descuentos por cantidad, incentivando a los clientes a comprar en mayores volúmenes. Con una instalación sencilla y gestión directa desde el panel de Nuvemshop, utiliza elementos visuales estratégicos como una barra de progreso interactiva en la página del producto, mostrando el precio original, el precio con descuento y el ahorro, además de destacar automáticamente la opción más ventajosa para el cliente. Disponible con una prueba gratuita de 7 días, la herramienta facilita la toma de decisiones de compra y ofrece resultados rápidos mediante una comunicación visual eficaz."
+        },
+        "banners": [
+            "-",
+            "-"
+        ],
+        "thumbnail_url": "-",
+        "support": {
+            "email": "suporte@huapps.com.br",
+            "help_url": "https://huapps.com.br/help/desconto-progressivo",
+            "terms_url": "https://huapps.com.br/help/desconto-progressivo",
+            "config_url": "https://huapps.com.br/help/desconto-progressivo"
+        },
+        "urls": {
+            "panel_url": "http://127.0.0.1:3999",
+            "api_url": "http://ns-desconto-por-qtd:3118",
+            "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/desconto-progressivo-huapps"
+        },
+        "prices": {
+            "brl": 49.9,
+            "usd": 8.2,
+            "ars": 8634,
+            "mxn": 169,
+            "cop": 35612,
+            "clp": 8290
+        },
+        "trial_days": 7,
+        "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+        "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+        "enhanced": true,
+        "published": true,
+        "videos": {
+            "presentation": "https://youtu.be/presentacao123",
+            "tutorials": {
+                "pt": "https://www.youtube.com/watch?v=vq_A0LzkUPc&ab_channel=Huapps",
+                "es": "https://www.youtube.com/watch?v=vq_A0LzkUPc&ab_channel=Huapps"
+            }
+        },
+        "faq": [
+            {
+                "question": "-",
+                "answer": "-",
+                "_id": "-"
+            },
+            {
+                "question": "-",
+                "answer": "-",
+                "_id": "-"
+            }
+        ],
+        "slack_channel": "",
+        "created_at": "2025-07-22T02:39:32.952Z",
+        "updated_at": "2025-07-22T19:36:04.270Z",
+        "__v": 0
+    }

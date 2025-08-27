@@ -1,0 +1,71 @@
+{
+    "app_slug": "ns-parent-id-pro",
+    "app_id": 14529,
+    "client_secret": "240cce9ec67684ca21d70a018624424bbbff7b1fbdcb49b2",
+    "name": {
+        "pt": "Parent ID",
+        "en": "Parent ID",
+        "es": "Parent ID"
+    },
+    "short_description": {
+        "pt": "Agrupe produtos similares com IA, melhore vendas e SEO. Fácil, personalizável e com 7 dias grátis!",
+        "en": "Group similar products with AI, improve sales and SEO. Easy, customizable and with 7 free days!",
+        "es": "¡Agrupa productos similares con IA, mejora ventas y SEO. Fácil, personalizable y con 7 días gratis!"
+    },
+    "description": {
+        "pt": "Agrupe automaticamente produtos similares com inteligência artificial, impulsione suas vendas e conquiste mais visibilidade no SEO. Uma solução fácil, totalmente personalizável e com 7 dias grátis para testar!",
+        "en": "Automatically group similar products with artificial intelligence, boost your sales and gain more SEO visibility. An easy, fully customizable solution with 7 free days to test!",
+        "es": "¡Agrupa automáticamente productos similares con inteligencia artificial, impulsiona tus ventas y conquista más visibilidad en SEO. Una solución fácil, totalmente personalizable y con 7 días gratis para probar!"
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/14529-30-pt_BR-file.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-parent-id:3114",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/parent-id-huapps?q=huapps"
+    },
+    "videos": {
+        "presentation": "https://youtu.be/LO-71s-UxYk?si=M9AgfOC6ulXi9KE1",
+        "tutorials": {
+            "pt": "https://youtube.com/playlist?list=PL9K-UrspkIuN9oj_5ghj_oHpHRQ2-9XrC&si=a6Gfcn6Roe_2lcWS",
+            "es": "https://youtube.com/playlist?list=PL9K-UrspkIuN9oj_5ghj_oHpHRQ2-9XrC&si=a6Gfcn6Roe_2lcWS"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 49.90,
+        "usd": 8.66,
+        "ars": 4995.00,
+        "mxn": 178.75,
+        "cop": 35748.93,
+        "clp": 6849.32
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o app Parent ID / Similares e qual sua função?",
+            "answer": "O aplicativo organiza e agrupa produtos semelhantes ou variações, exibindo-os de forma mais clara na loja. Ele pode funcionar em dois modos: Parent ID (padrão), onde você define manualmente os grupos de produtos, ou Similares com IA, que sugere produtos relacionados automaticamente com base em gênero, categoria e características."
+        },
+        {
+            "question": "Posso personalizar como os grupos de produtos são exibidos?",
+            "answer": "Sim. É possível organizar os itens de forma customizada (ordem definida pelo lojista) ou em ordem alfabética. Além disso, ao usar o modo Similar, o app exibe um preview de como os produtos relacionados aparecerão na loja. Você também pode personalizar mensagens, cores e estilo do botão de sugestão."
+        },
+        {
+            "question": "Onde posso gerenciar os grupos e configurações do app?",
+            "answer": "Na Dashboard, você pode criar e editar grupos, adicionar ou remover produtos, definir nomes alternativos e escolher exibir cores em vez de imagens. Já na aba Configurações, é possível ativar/desativar o app, ocultar produtos sem estoque, exibir variações e ajustar as opções de inteligência artificial para produtos similares."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}

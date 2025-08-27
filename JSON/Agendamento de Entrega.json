@@ -1,0 +1,67 @@
+{
+    "app_slug": "ns-agendamento-entrega",
+    "app_id": 14422,
+    "client_secret": "1a85d1df04e5e23dccfea0e8538328848c279d394ed0672f",
+    "name": {
+        "pt": "Agendamento de Entrega",
+        "en": "Delivery Scheduling",
+        "es": "Programación de Entrega"
+    },
+    "short_description": {
+        "pt": "Transforme sua loja em delivery com agendamento de data e período. Calendário dinâmico e fácil.",
+        "en": "Transform your store into delivery with date and time scheduling. Dynamic and easy calendar.",
+        "es": "Transforma tu tienda en delivery con programación de fecha y período. Calendario dinámico y fácil."
+    },
+    "description": {
+        "pt": "Transforme sua loja em um delivery inteligente: permita que seus clientes agendem data e horário de entrega com um calendário dinâmico, simples e intuitivo.",
+        "en": "Transform your store into an intelligent delivery: allow your customers to schedule delivery date and time with a dynamic, simple and intuitive calendar.",
+        "es": "Transforma tu tienda en un delivery inteligente: permite que tus clientes programen fecha y hora de entrega con un calendario dinámico, simple e intuitivo."
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/14422-30-pt_BR-calendar.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-agendamento-entrega:3113",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/agendamento-entregas-huapps?q=huapps"
+    },
+    "videos": {
+        "presentation": "https://www.youtube.com/watch?v=AYuYK_K-P80&list=PL9K-UrspkIuMzXckERi97v_5nBxTLFvyf&index=8&t=30s&pp=iAQB",
+        "tutorials": {
+            "pt": "https://youtube.com/playlist?list=PL9K-UrspkIuMzXckERi97v_5nBxTLFvyf&si=e0RtEODK8di4H935",
+            "es": "https://youtube.com/playlist?list=PL9K-UrspkIuMzXckERi97v_5nBxTLFvyf&si=e0RtEODK8di4H935"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 99.90,
+        "usd": 20.00
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o app Agendamento de Entregas e para que ele serve?",
+            "answer": "O Agendamento de Entregas é um app que organiza pedidos com base em datas e períodos de entrega ou retirada. Ele permite que o lojista gerencie de forma clara todas as etapas — da preparação até a finalização —, além de oferecer filtros avançados, relatórios de pedidos, histórico de entregas e organização de estoque com prateleiras e centros de distribuição."
+        },
+        {
+            "question": "Quais são os principais recursos de configuração do app?",
+            "answer": "O lojista pode criar meios de envio personalizados, definir períodos de entrega com horários e limites diários, configurar faixas de CEP atendidas, cadastrar centros de distribuição e até aplicar regras de bloqueio para grupos de produtos (como dias da semana, datas específicas ou regiões). Além disso, há configurações avançadas como personalização de textos e mensagens, envio automático de e-mails, popup para seleção de data, integração com impressoras, campos extras no checkout e fechamento programado de datas."
+        },
+        {
+            "question": "Como o cliente interage com o agendamento na loja?",
+            "answer": "No checkout, o cliente pode escolher entre entrega ou retirada em loja, selecionar a data e o período disponíveis (com base nas regras configuradas pelo lojista) e visualizar mensagens personalizadas sobre disponibilidade. Também é possível habilitar opções como entrega na portaria, envio de mensagens personalizadas no pedido e até indicar destinatário e telefone para facilitar a entrega."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}

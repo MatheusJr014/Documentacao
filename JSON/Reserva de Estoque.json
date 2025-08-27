@@ -1,0 +1,71 @@
+{
+    "app_slug": "ns-stock-reserve",
+    "app_id": 7386,
+    "client_secret": "64dcb57e8099a8c983721dac8cf3699b5180893a172b7442",
+    "name": {
+        "pt": "Reserva de Estoque",
+        "en": "Stock Reservation",
+        "es": "Reserva de Stock"
+    },
+    "short_description": {
+        "pt": "A melhor solução para o seu controle de estoque!",
+        "en": "The best solution for your stock control!",
+        "es": "¡La mejor solución para tu control de stock!"
+    },
+    "description": {
+        "pt": "A solução ideal para simplificar e otimizar o controle do seu estoque, garantindo eficiência, agilidade e total organização.",
+        "en": "The ideal solution to simplify and optimize your stock control, ensuring efficiency, agility and total organization.",
+        "es": "La solución ideal para simplificar y optimizar el control de tu stock, garantizando eficiencia, agilidad y total organización."
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/7386-pt_BR-Reserva-de-estoque2.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-stock-reserve:3002",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/reserva-de-estoque?q=huapps"
+    },
+    "videos": {
+        "presentation": "https://www.youtube.com/watch?v=Rl_aGpDe3DM&list=PL9K-UrspkIuOY7aazLH4uix4fYtRkPejZ&index=1&pp=iAQB",
+        "tutorials": {
+            "pt": "https://youtube.com/playlist?list=PL9K-UrspkIuOY7aazLH4uix4fYtRkPejZ&si=DBc65d0qZ1faIe_u",
+            "es": "https://youtube.com/playlist?list=PL9K-UrspkIuOY7aazLH4uix4fYtRkPejZ&si=DBc65d0qZ1faIe_u"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 99.90,
+        "usd": 17.32,
+        "ars": 9990.0,
+        "mxn": 357.50,
+        "cop": 71495.86,
+        "clp": 13698.63
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o app Reserva de Estoque e para que ele serve?",
+            "answer": "O Reserva de Estoque ajuda a aumentar a conversão da loja criando um tempo limitado de reserva de carrinho. Assim, quando um cliente adiciona produtos ao carrinho, eles ficam temporariamente bloqueados para ele, evitando que sejam comprados por outros enquanto finaliza a compra. Se o prazo expirar, os itens retornam ao estoque automaticamente."
+        },
+        {
+            "question": "Quais personalizações posso aplicar no cronômetro e notificações?",
+            "answer": "O app permite configurar tempo de expiração do carrinho, reinício automático do contador em alterações, e acréscimo de minutos extras no checkout. O cronômetro pode ser exibido em diferentes formatos (quadrado, circular, etc.), posicionado em locais estratégicos da página e ter textos, cores e botões totalmente personalizados. Além disso, é possível configurar notificações automáticas para avisar o cliente quando a reserva começar, 2 minutos antes de expirar e no momento da expiração."
+        },
+        {
+            "question": "Como acompanhar o desempenho e resultados do app?",
+            "answer": "Na tela inicial, você encontra métricas em tempo real sobre a taxa de conversão: carrinhos ativos, finalizados, abandonados e expirados. Isso permite acompanhar de perto o impacto do app nas vendas e ajustar as configurações conforme o comportamento dos clientes."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}

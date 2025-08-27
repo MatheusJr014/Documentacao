@@ -1,0 +1,71 @@
+{
+    "app_slug": "ns-lista-de-presentes",
+    "app_id": 17512,
+    "client_secret": "719116a3538821f740f5ab30f0109cc35888247bc300c325",
+    "name": {
+        "pt": "Lista de Presentes",
+        "en": "Gift List",
+        "es": "Lista de Regalos"
+    },
+    "short_description": {
+        "pt": "Crie listas de presentes exclusivas e compartilhe com amigos. Aumente suas vendas em datas especiais!",
+        "en": "Create exclusive gift lists and share with friends. Increase your sales on special dates!",
+        "es": "¡Crea listas de regalos exclusivas y compártelas con amigos. ¡Aumenta tus ventas en fechas especiales!"
+    },
+    "description": {
+        "pt": "Crie listas de presentes personalizadas e exclusivas, compartilhe facilmente com amigos e clientes, e aproveite as datas especiais para impulsionar suas vendas!",
+        "en": "Create personalized and exclusive gift lists, easily share with friends and customers, and take advantage of special dates to boost your sales!",
+        "es": "¡Crea listas de regalos personalizadas y exclusivas, compártelas fácilmente con amigos y clientes, y aprovecha las fechas especiales para impulsar tus ventas!"
+    },
+    "banners": [
+        "-",
+        "-"
+    ],
+    "thumbnail_url": "https://d2r9epyceweg5n.cloudfront.net/apps/17512-30-pt_BR-gift-card.gif",
+    "support": {
+        "email": "suporte@huapps.com.br",
+        "help_url": "-",
+        "terms_url": "-",
+        "config_url": "-"
+    },
+    "urls": {
+        "panel_url": "http://127.0.0.1:3999",
+        "api_url": "http://ns-lista-de-presentes:3116",
+        "marketplace_url": "https://www.nuvemshop.com.br/loja-aplicativos-nuvem/lista-de-presentes?q=huapps"
+    },
+    "videos": {
+        "presentation": "-",
+        "tutorials": {
+            "pt": "-",
+            "es": "-"
+        }
+    },
+    "trial_days": 7,
+    "stripe_product_id": "prod_SMezV4CAEeT4Ai",
+    "stripe_price_id": "price_1RRvf52M1qVCKoM7aeKtQTX7",
+    "prices": {
+        "brl": 79.90,
+        "usd": 14.00,
+        "ars": 18559.0,
+        "mxn": 268.00,
+        "cop": 57940,
+        "clp": 13726
+    },
+    "enhanced": true,
+    "published": true,
+    "faq": [
+        {
+            "question": "O que é o app Lista de Presentes e como ele funciona?",
+            "answer": "O app permite que clientes criem listas de presentes (como casamento, aniversário ou chá de bebê) dentro da sua loja. O lojista tem controle sobre as listas, produtos disponíveis, botões de interação e até cupons de desconto aplicados. Caso a funcionalidade de página não seja ativada, o app funciona apenas como uma lista de desejos pessoal, onde o cliente pode salvar e comprar itens depois."
+        },
+        {
+            "question": "Quais são os principais recursos de personalização?",
+            "answer": "Dashboard: pesquisa por listas usando nome, anfitriões, data e status. Produtos bloqueados: escolha itens que não podem ser adicionados às listas. Botão “Minhas Listas”: configure textos, cores, tamanho e posicionamento. Botão “Adicionar à Lista”: defina seletor do produto, personalize textos, cores e tamanho. Página de Lista de Presentes: adicione banner, fundo, textos, filtros, placeholders e até HTML/CSS personalizados. CTA de Aplicar Desconto: exclusivo para listas de presentes, com customização de botões, mensagens e cores"
+        },
+        {
+            "question": "Como os clientes interagem com as listas na loja?",
+            "answer": "Os clientes podem criar suas próprias listas, adicionar produtos diretamente da página de produto (via botão configurado), compartilhar a lista com convidados e permitir que outras pessoas comprem os presentes escolhidos. O lojista pode acompanhar o status da lista (ativa, encerrada, com cupom gerado ou rascunho) e aplicar condições especiais, como descontos automáticos no saldo de presentes."
+        }
+    ],
+    "slack_channel": "https://hooks.slack.com/services/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"
+}
