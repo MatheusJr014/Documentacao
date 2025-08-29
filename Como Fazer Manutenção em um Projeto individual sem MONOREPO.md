@@ -6,6 +6,7 @@ Este guia descreve o passo a passo necessário para configurar o ambiente local,
 ---
 
 ## 📑 Índice
+- [🚨 Solução de Problemas Comuns](#-solução-de-problemas-comuns)
 - [🔧 Passo 1 – Clonar os Repositórios](#-passo-1--clonar-os-repositórios)
 - [🔄 Passo 2 – Atualizar os Repositórios](#-passo-2--atualizar-os-repositórios)
 - [📦 Passo 3 – Instalar Dependências](#-passo-3--instalar-dependências)
@@ -17,6 +18,62 @@ Este guia descreve o passo a passo necessário para configurar o ambiente local,
 - [🎨 Passo 9 – Rodando o FrontStore](#-passo-9--rodando-o-frontstore)
 - [🔗 Passo 10 – Como pegar a URL do FrontStore?](#-passo-10--como-pegar-a-url-do-frontstore)
 - [📝 Passo 11 – Finalizando](#-passo-11--finalizando)
+
+---
+
+## 🚨 Solução de Problemas Comuns
+
+### ❌ Erro: "Not Found Store Data"
+
+Este erro ocorre quando o banco de dados MongoDB não possui os dados necessários da store API. Siga os passos abaixo para resolver:
+
+#### 🔍 Passo 1: Acessar o MongoDB
+1. Abra o **3T MongoDB** (MongoDB Compass ou Studio 3T)
+2. Conecte-se ao banco de dados do seu projeto
+
+#### 📊 Passo 2: Verificar Dados da Store API
+1. Navegue até a coleção **`store_apis`**
+2. Execute o comando de consulta:
+```javascript
+db.getCollection("store_apis").find({})
+```
+
+#### ⚠️ Passo 3: Identificar o Problema
+- **Se retornar 0 linhas**: A coleção está vazia e precisa ser populada
+- **Se retornar dados**: Verifique se os dados estão corretos para sua aplicação
+
+#### ➕ Passo 4: Adicionar Dados (se necessário)
+1. Clique em **"Add Document"**
+2. Cole o seguinte JSON de exemplo - (JSON que provavelmente já existe, necessário se informar sobre) (substitua os valores pelos dados reais da sua store):
+
+```json
+{
+    "_id": "exemplo_id",
+    "user_id": "exemplo_user",
+    "access_token": "exemplo_token",
+    "admin_language": "exemplo_language",
+    "app_status": "exemplo_status",
+    "createdAt": "exemplo",
+    "email": "exemplo_email",
+    "main_currency": "exemplo_currency",
+    "main_language": "exemplo_language",
+    "name": "exemplo_name",
+    "original_domain": "exemplo_domain",
+    "phone": "exemplo_phone",
+    "plan_name": "exemplo",
+    "scope": "exemplo",
+    "status": "exemplo",
+    "stripe_customer_id": "exemplo",
+    "stripe_subscription_id": "exemplo",
+    "token_type": "exemplo",
+    "updatedAt": "exemplo"
+}
+```
+
+#### ✅ Passo 5: Confirmar e Testar
+1. Confirme a ação no MongoDB
+2. Execute novamente sua aplicação
+3. A próxima requisição deve retornar **Status 200 OK**
 
 ---
 
