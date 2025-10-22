@@ -1,0 +1,360 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: always
+    ports:
+      - "127.0.0.1:27018:27017"
+    volumes:
+      - mongo-data:/data/db
+    command: mongod --quiet --logpath /dev/null
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - backend
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --loglevel warning
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - backend
+
+  # prometheus:
+  #   image: prom/prometheus
+  #   container_name: prometheus
+  #   restart: always
+  #   volumes:
+  #     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #   ports:
+  #     - "9090:9090"
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
+  #   networks:
+  #     - backend
+
+  # grafana:
+  #   image: grafana/grafana
+  #   container_name: grafana
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
+  #   networks:
+  #     - backend
+  #   volumes:
+  #     - grafana-data:/var/lib/grafana
+
+  core-jobs:
+    image: core-jobs
+    build:
+      context: .
+      dockerfile: apps/core-jobs/api/Dockerfile.dev
+    container_name: core-jobs
+    restart: unless-stopped
+    working_dir: /app/apps/core-jobs/api
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./apps/core-jobs/api/.env
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - backend
+
+  media-api:
+    image: media-api
+    build:
+      context: .
+      dockerfile: apps/media/api/Dockerfile.dev
+    container_name: media-api
+    restart: unless-stopped
+    working_dir: /app/apps/media/api
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4001:4001"
+    env_file:
+      - ./apps/media/api/.env
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - backend
+
+  notification-api:
+    image: notification-api
+    build:
+      context: .
+      dockerfile: apps/notification/api/Dockerfile.dev
+    container_name: notification-api
+    restart: unless-stopped
+    working_dir: /app/apps/notification/api
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4002:4002"
+    env_file:
+      - ./apps/notification/api/.env
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - backend
+
+  huapps-api:
+    image: huapps-api
+    build:
+      context: .
+      dockerfile: apps/huapps/api/Dockerfile.dev
+    container_name: huapps-api
+    restart: unless-stopped
+    working_dir: /app/apps/huapps/api
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "3999:3999"
+    env_file:
+      - ./apps/huapps/api/.env
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - backend
+
+  # lista-de-presentes-api:
+  #   image: lista-de-presentes-api
+  #   build:
+  #     context: .
+  #     dockerfile: apps/lista-de-presentes/api/Dockerfile.dev
+  #   container_name: lista-de-presentes-api
+  #   restart: unless-stopped
+  #   working_dir: /app/apps/lista-de-presentes/api
+  #   volumes:
+  #     - .:/app
+  #     - ./node_modules:/app/node_modules
+  #   ports:
+  #     - "3116:3116"
+  #   env_file:
+  #     - ./apps/lista-de-presentes/api/.env
+  #   depends_on:
+  #     - mongo
+  #     - redis
+  #   networks:
+  #     - backend
+
+  # lista-de-presentes-front:
+  #   build:
+  #     context: .
+  #     dockerfile: apps/lista-de-presentes/front/Dockerfile
+  #   container_name: lista-de-presentes-front
+  #   working_dir: /app/apps/lista-de-presentes/front
+  #   ports:
+  #     - "3216:3216"
+  #   volumes:
+  #     - ./apps/lista-de-presentes/front/src:/app/apps/lista-de-presentes/front/src
+  #     - ./apps/lista-de-presentes/front/public:/app/apps/lista-de-presentes/front/public
+  #     - ./apps/lista-de-presentes/front/vite.config.ts:/app/apps/lista-de-presentes/front/vite.config.ts
+  #     - ./apps/lista-de-presentes/front/tsconfig.json:/app/apps/lista-de-presentes/front/tsconfig.json
+  #     - ./packages/react-commons:/app/packages/react-commons
+  #   environment:
+  #     - NODE_ENV=development
+  #   networks:
+  #     - backend
+
+  # indique-e-ganhe-api:
+  #   image: indique-e-ganhe-api
+  #   build:
+  #     context: .
+  #     dockerfile: apps/indique-e-ganhe/api/Dockerfile.dev
+  #   container_name: indique-e-ganhe-api
+  #   restart: unless-stopped
+  #   working_dir: /app/apps/indique-e-ganhe/api
+  #   volumes:
+  #     - .:/app
+  #     - ./node_modules:/app/node_modules
+  #   ports:
+  #     - "3118:3118"
+  #   env_file:
+  #     - ./apps/indique-e-ganhe/api/.env
+  #   depends_on:
+  #     - mongo
+  #     - redis
+  #   networks:
+  #     - backend
+
+  # indique-e-ganhe-front:
+  #   build:
+  #     context: .
+  #     dockerfile: apps/indique-e-ganhe/front/Dockerfile
+  #   container_name: indique-e-ganhe-front
+  #   working_dir: /app/apps/indique-e-ganhe/front
+  #   ports:
+  #     - "3218:3218"
+  #   volumes:
+  #     - ./apps/indique-e-ganhe/front/src:/app/apps/indique-e-ganhe/front/src
+  #     - ./apps/indique-e-ganhe/front/public:/app/apps/indique-e-ganhe/front/public
+  #     - ./apps/indique-e-ganhe/front/vite.config.ts:/app/apps/indique-e-ganhe/front/vite.config.ts
+  #     - ./apps/indique-e-ganhe/front/tsconfig.json:/app/apps/indique-e-ganhe/front/tsconfig.json
+  #     - ./packages/react-commons:/app/packages/react-commons
+  #   environment:
+  #     - NODE_ENV=development
+  #   networks:
+  #     - backend
+
+
+  compra-rapida-api:
+    image: compra-rapida-api
+    build:
+      context: .
+      dockerfile: apps/compra-rapida/api/Dockerfile.dev
+    container_name: compra-rapida-api
+    restart: unless-stopped
+    working_dir: /app/apps/compra-rapida/api
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "3122:3122"
+    env_file:
+      - ./apps/compra-rapida/api/.env
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - backend
+
+  compra-rapida-front:
+    build:
+      context: .
+      dockerfile: apps/compra-rapida/front/Dockerfile
+    container_name: compra-rapida-front
+    working_dir: /app/apps/compra-rapida/front
+    ports:
+      - "3222:3222"
+    volumes:
+      - ./apps/compra-rapida/front/src:/app/apps/compra-rapida/front/src
+      - ./apps/compra-rapida/front/public:/app/apps/compra-rapida/front/public
+      - ./apps/compra-rapida/front/vite.config.ts:/app/apps/compra-rapida/front/vite.config.ts
+      - ./apps/compra-rapida/front/tsconfig.json:/app/apps/compra-rapida/front/tsconfig.json
+      - ./packages/react-commons:/app/packages/react-commons
+    environment:
+      - NODE_ENV=development
+    networks:
+      - backend
+
+      
+  # recursos-b2b-api:
+  #   image: recursos-b2b-api
+  #   build:
+  #     context: .
+  #     dockerfile: apps/recursos-b2b/api/Dockerfile.dev
+  #   container_name: recursos-b2b-api
+  #   restart: unless-stopped
+  #   working_dir: /app/apps/recursos-b2b/api
+  #   volumes:
+  #     - .:/app
+  #     - ./node_modules:/app/node_modules
+  #   ports:
+  #     - "3123:3123"
+  #   env_file:
+  #     - ./apps/recursos-b2b/api/.env
+  #   depends_on:
+  #     - mongo
+  #     - redis
+  #   networks:
+  #     - backend
+
+  # recursos-b2b-front:
+  #   build:
+  #     context: .
+  #     dockerfile: apps/recursos-b2b/front/Dockerfile
+  #   container_name: recursos-b2b-front
+  #   working_dir: /app/apps/recursos-b2b/front
+  #   ports:
+  #     - "3223:3223"
+  #   volumes:
+  #     - ./apps/recursos-b2b/front/src:/app/apps/recursos-b2b/front/src
+  #     - ./apps/recursos-b2b/front/public:/app/apps/recursos-b2b/front/public
+  #     - ./apps/recursos-b2b/front/vite.config.ts:/app/apps/recursos-b2b/front/vite.config.ts
+  #     - ./apps/recursos-b2b/front/tsconfig.json:/app/apps/recursos-b2b/front/tsconfig.json
+  #     - ./packages/react-commons:/app/packages/react-commons
+  #   environment:
+  #     - NODE_ENV=development
+  #   networks:
+  #     - backend
+
+  # page-builder-api:
+  #   image: page-builder-api
+  #   build:
+  #     context: .
+  #     dockerfile: apps/page-builder/api/Dockerfile.dev
+  #   container_name: page-builder-api
+  #   restart: unless-stopped
+  #   working_dir: /app/apps/page-builder/api
+  #   volumes:
+  #     - .:/app
+  #     - ./node_modules:/app/node_modules
+  #   ports:
+  #     - "3125:3125"
+  #   env_file:
+  #     - ./apps/page-builder/api/.env
+  #   depends_on:
+  #     - mongo
+  #     - redis
+  #   networks:
+  #     - backend
+
+  # page-builder-front:
+  #   build:
+  #     context: .
+  #     dockerfile: apps/page-builder/front/Dockerfile
+  #   container_name: page-builder-front
+  #   working_dir: /app/apps/page-builder/front
+  #   ports:
+  #     - "3225:3225"
+  #   volumes:
+  #     - ./apps/page-builder/front/src:/app/apps/page-builder/front/src
+  #     - ./apps/page-builder/front/public:/app/apps/page-builder/front/public
+  #     - ./apps/page-builder/front/vite.config.ts:/app/apps/page-builder/front/vite.config.ts
+  #     - ./apps/page-builder/front/tsconfig.json:/app/apps/page-builder/front/tsconfig.json
+  #     - ./packages/react-commons:/app/packages/react-commons
+  #   environment:
+  #     - NODE_ENV=development
+  #   networks:
+  #     - backend
+
+volumes:
+  mongo-data:
+  # grafana-data:
+
+networks:
+  backend:
+    driver: bridge
