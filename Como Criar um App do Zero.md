@@ -131,7 +131,7 @@ Esta etapa foca em registrar o aplicativo na plataforma de parceiros da Nuvemsho
     "banners": ["URL_BANNER_1", "URL_BANNER_2"],
     "thumbnail_url": "URL_DA_IMAGEM_MINIATURA",
     "support": {
-        "email": "suporte@huapps.com.br",
+        "email": "suporte@huapps.com",
         "help_url": "URL_PAGINA_DE_AJUDA",
         "terms_url": "URL_TERMOS_DE_USO",
         "config_url": "URL_DE_CONFIGURACAO"
