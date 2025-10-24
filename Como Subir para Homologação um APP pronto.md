@@ -120,7 +120,7 @@ Grave um vídeo demonstrando o funcionamento completo do APP, explicando:
 
 📹 **Exemplo de vídeo:**
 
-[🎬 Assistir vídeo demonstrativo](URL_DO_VIDEO)
+[🎬 Assistir vídeo demonstrativo](https://www.youtube.com/watch?v=9X-BJTzzLf4)
 
 ---
 
@@ -133,7 +133,7 @@ Grave um vídeo demonstrando o funcionamento completo do APP, explicando:
 - **URLs:**
   - **Site do Aplicativo:** CDN do frontend (apenas substituir o slug do app).
   
-  ![Exemplo de configuração de URL](URL_DA_IMAGEM)
+  ![Exemplo de configuração de URL](https://github.com/MatheusJr014/Documentacao/blob/main/Images/URLs%20Dados%20Basicos.png)
   
   - **URL de Redirecionamento:** mesmo padrão dos outros apps, alterando apenas o slug.
 - **Aplicativos incorporados ao administrador:** marcar o checkbox.
