@@ -107,9 +107,9 @@ Crie diagramas UML demonstrando o fluxo das requisições feitas à API da Nuvem
 
 📸 **Exemplos:**
 
-![Diagrama UML 1](URL_DA_IMAGEM_1)
+![Diagrama UML FrontStore](Images/Diagrama%20UML%20FrontStore.png)
 
-![Diagrama UML 2](URL_DA_IMAGEM_2)
+![Diagrama UML Lojista Painel](Images/Diagrama%20UML%20Lojista%20Painel.png)
 
 #### 🎥 Vídeo do APP
 Grave um vídeo demonstrando o funcionamento completo do APP, explicando:
