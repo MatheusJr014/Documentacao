@@ -107,9 +107,9 @@ Crie diagramas UML demonstrando o fluxo das requisições feitas à API da Nuvem
 
 📸 **Exemplos:**
 
-![Diagrama UML FrontStore](Images/Diagrama%20UML%20FrontStore.png)
+![Diagrama UML FrontStore](https://raw.githubusercontent.com/MatheusJr014/Documentacao/main/Images/Diagrama%20UML%20FrontStore.png )
 
-![Diagrama UML Lojista Painel](Images/Diagrama%20UML%20Lojista%20Painel.png)
+![Diagrama UML Lojista Painel](https://raw.githubusercontent.com/MatheusJr014/Documentacao/main/Images/Diagrama%20UML%20Lojista%20Painel.png)
 
 #### 🎥 Vídeo do APP
 Grave um vídeo demonstrando o funcionamento completo do APP, explicando:
@@ -133,7 +133,7 @@ Grave um vídeo demonstrando o funcionamento completo do APP, explicando:
 - **URLs:**
   - **Site do Aplicativo:** CDN do frontend (apenas substituir o slug do app).
   
-  ![Exemplo de configuração de URL](https://github.com/MatheusJr014/Documentacao/blob/main/Images/URLs%20Dados%20Basicos.png)
+  ![Exemplo de configuração de URL](https://raw.githubusercontent.com/MatheusJr014/Documentacao/main/Images/URLs%20Dados%20Basicos.png)
   
   - **URL de Redirecionamento:** mesmo padrão dos outros apps, alterando apenas o slug.
 - **Aplicativos incorporados ao administrador:** marcar o checkbox.
