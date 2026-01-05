@@ -13,11 +13,11 @@ Este guia descreve o passo a passo necessário para configurar o ambiente local,
 - [📦 Passo 4 – Configurar e Rodar Docker](#-passo-4--configurar-e-rodar-docker)
 - [💻 Passo 5 – Abrir no VS Code](#-passo-5--abrir-no-vs-code)
 - [🖥️ Passo 6 – Preparar Terminais](#️-passo-6--preparar-terminais)
-- [🚀 Passo 8 – Rodar os Projetos](#-passo-8--rodar-os-projetos)
-- [🌐 Passo 9 – Configurar Aplicativo na Nuvem Shop](#-passo-9--configurar-aplicativo-na-nuvem-shop)
-- [🎨 Passo 10 – Rodando o FrontStore](#-passo-10--rodando-o-frontstore)
-- [🔗 Passo 11 – Como pegar a URL do FrontStore?](#-passo-11--como-pegar-a-url-do-frontstore)
-- [📝 Passo 12 – Finalizando](#-passo-12--finalizando)
+- [🚀 Passo 7 – Rodar os Projetos](#-passo-8--rodar-os-projetos)
+- [🌐 Passo 8 – Configurar Aplicativo na Nuvem Shop](#-passo-9--configurar-aplicativo-na-nuvem-shop)
+- [🎨 Passo 9 – Rodando o FrontStore](#-passo-10--rodando-o-frontstore)
+- [🔗 Passo 10 – Como pegar a URL do FrontStore?](#-passo-11--como-pegar-a-url-do-frontstore)
+- [📝 Passo 11 – Finalizando](#-passo-12--finalizando)
 
 ---
 
