@@ -7,6 +7,7 @@ Este guia descreve o passo a passo necessário para configurar o ambiente local,
 
 ## 📑 Índice
 - [🚨 Solução de Problemas Comuns](#-solução-de-problemas-comuns)
+- [🔁 Callbacks e Webhooks (e uso de ngrok)](#-callbacks-e-webhooks-e-uso-de-ngrok)
 - [🔧 Passo 1 – Clonar os Repositórios](#-passo-1--clonar-os-repositórios)
 - [🔄 Passo 2 – Atualizar os Repositórios](#-passo-2--atualizar-os-repositórios)
 - [📦 Passo 3 – Instalar Dependências](#-passo-3--instalar-dependências)
@@ -74,6 +75,71 @@ db.getCollection("store_apis").find({})
 1. Confirme a ação no MongoDB
 2. Execute novamente sua aplicação
 3. A próxima requisição deve retornar **Status 200 OK**
+
+---
+
+## 🔁 Callbacks e Webhooks (e uso de ngrok)
+
+Em manutenção (fora de monorepo), é muito comum o app precisar:
+- Receber o usuário de volta em uma **URL de retorno (Callback)** após OAuth/instalação
+- Receber **eventos automáticos (Webhooks)** de Nuvemshop e/ou outras plataformas externas
+
+Se você estiver rodando localmente, a regra é simples: **plataformas externas não chamam `localhost`**. Por isso, para testar de verdade, você precisa expor seu backend com `ngrok`.
+
+### ✅ O que é Callback?
+- **Callback** é uma URL do seu app usada como “retorno” após uma ação externa.
+- Geralmente ocorre via navegador (ex: `GET /auth/callback`) e traz parâmetros como `code` e `state`.
+
+Uso típico no projeto:
+- Receber `code/state`
+- Validar `state`
+- Trocar `code` por `access_token` no backend
+- Persistir credenciais/dados e redirecionar o usuário para uma tela do app
+
+### ✅ O que é Webhook?
+- **Webhook** é uma chamada **servidor → servidor** (normalmente `POST`) que uma plataforma envia para o seu backend para notificar eventos.
+
+Uso típico no projeto:
+- Criar rota(s) pública(s) (ex: `POST /webhooks/nuvemshop`)
+- Validar autenticidade (assinatura/segredo, conforme a plataforma)
+- Processar rápido e responder `200 OK` / `204 No Content`
+- Garantir **idempotência** (o mesmo evento pode ser reenviado)
+
+---
+
+### 🌐 Como usar `ngrok` no projeto (fora de monorepo)
+
+1. Suba o backend do app localmente (confira a porta no log, ex: `http://localhost:3122`)
+2. Rode o `ngrok` apontando para essa porta:
+
+```bash
+ngrok http 3122
+```
+
+3. Copie a URL pública HTTPS gerada (ex: `https://<seu-subdominio>.ngrok-free.app`)
+4. Atualize os pontos de integração para usar a URL do `ngrok`:
+   - **Callback URLs** (OAuth/instalação)
+   - **Webhook endpoints**
+   - Qualquer “URL base pública” usada em variáveis de ambiente do projeto
+
+> ⚠️ Importante: a URL do `ngrok` muda com frequência (a não ser que você use recursos pagos/reservados). Sempre que mudar, atualize também na plataforma externa.
+
+---
+
+### 🏷️ Nuvemshop: promoções (descontos, fretes, etc.) e `ngrok`
+
+Quando você precisa lidar com **promoções/condições** (ex: regras de **desconto**, **frete**, validações e comportamentos que dependem de chamadas externas), é comum que a Nuvemshop (ou serviços acoplados ao fluxo) precise “bater” no seu backend para:
+- Validar regras
+- Calcular condições
+- Registrar eventos relacionados à aplicação da promoção
+
+Em desenvolvimento local, isso só funciona se seu backend estiver acessível publicamente. Então, nesses casos, **use `ngrok` obrigatoriamente**.
+
+Checklist rápido:
+- Backend rodando local
+- `ngrok` rodando na porta do backend
+- Integrações/URLs atualizadas para a URL do `ngrok`
+- Teste o cenário (desconto/frete/promoção) acompanhando logs e payloads recebidos
 
 ---
 

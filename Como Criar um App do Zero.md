@@ -14,6 +14,7 @@ Este guia descreve o processo completo para a criação de um novo aplicativo Nu
 - [⚙️ Passo 5: Adicionar Configurações do App](#️-passo-5-adicionar-configurações-do-app)
 - [🚀 Passo 6: Iniciar o Ambiente de Desenvolvimento](#-passo-6-iniciar-o-ambiente-de-desenvolvimento)
 - [🔄 Passo 7: Rodar os Commons](#-passo-7-rodar-os-commons)
+- [🔁 Tópico Extra: Callbacks e Webhooks (e uso de ngrok)](#-tópico-extra-callbacks-e-webhooks-e-uso-de-ngrok)
 - [🏪 Passo 8: Criar o Aplicativo na Nuvemshop Partners](#-passo-8-criar-o-aplicativo-na-nuvemshop-partners)
 - [📝 Passo 9: Cadastrar o App na API Local](#-passo-9-cadastrar-o-app-na-api-local)
 - [🔗 Passo 10: Instalar o App na Loja de Teste](#-passo-10-instalar-o-app-na-loja-de-teste)
@@ -80,6 +81,98 @@ make dev
 - Para garantir que as bibliotecas compartilhadas (`react-commons` e `api-commons`) reflitam qualquer alteração:
 1. Abra um terminal separado
 2. Execute o comando para mantê-las rodando em modo de desenvolvimento
+
+---
+
+## 🔁 Tópico Extra: Callbacks e Webhooks (e uso de ngrok)
+
+Este tópico existe porque, na prática, quase todo app precisa **receber eventos** (ex: Promoções, descontos ou fretes).
+
+### ✅ O que é Callback?
+- **Callback (URL de retorno)** é uma URL do seu app para onde o usuário (navegador) é redirecionado após uma ação em outra plataforma.
+- **Exemplos comuns**:
+  - Final do OAuth (quando a plataforma devolve um `code`/`state`)
+  - Retorno após instalação/ativação
+  - Retorno de checkout externo
+
+**Características**:
+- Geralmente é uma navegação do browser (GET).
+- Você costuma validar parâmetros (ex: `state`) e **trocar `code` por token** no backend.
+
+### ✅ O que é Webhook?
+- **Webhook** é uma chamada **servidor → servidor**: a plataforma externa envia um **HTTP POST** para um endpoint do seu backend avisando que “algo aconteceu”.
+- **Exemplos comuns**:
+  - Pedido criado/atualizado
+  - Cliente criado
+  - Pagamento aprovado/recusado
+  - Alteração de status de assinatura/billing
+
+**Características**:
+- Não depende do navegador do usuário.
+- Deve ser **rápido** (responder 200/204 e processar assíncrono quando fizer sentido).
+- Precisa de **validação/autenticidade** (ex: assinatura/HMAC, token secreto, IP allowlist — depende da plataforma).
+- Precisa ser **idempotente** (o mesmo evento pode chegar mais de 1 vez).
+
+---
+
+### 🧩 Como usar nos projetos (Monorepo)
+
+Em geral você vai implementar isso **na API do seu app** (backend):
+
+- **Callback**:
+  - Crie/ajuste uma rota pública (ex: `GET /auth/callback`).
+  - Valide `state` (anti-CSRF) e leia `code`.
+  - Faça a troca do `code` por `access_token` no backend.
+  - Persista tokens/dados necessários e redirecione o usuário para o painel/config do app.
+
+- **Webhook**:
+  - Crie uma rota pública (ex: `POST /webhooks/nuvemshop` ou `POST /webhooks/<plataforma>`).
+  - Valide a origem (assinatura/segredo).
+  - Registre o evento (log) e envie para fila/worker (quando existir).
+  - Retorne `200 OK` (ou `204 No Content`) o mais rápido possível.
+
+> 💡 Dica: mantenha endpoints de webhook **separados por domínio** (ex: `.../webhooks/billing`, `.../webhooks/orders`) para facilitar troubleshooting e regras de segurança.
+
+---
+
+### 🌐 Quando e por que usar `ngrok`
+
+Quando você está em desenvolvimento local, seu backend geralmente está em `http://localhost:<porta>`. **Plataformas externas não conseguem chamar `localhost`** da sua máquina — por isso você precisa expor uma URL pública temporária.
+
+Use `ngrok` sempre que:
+- **Seu app precisar receber Webhooks de plataformas externas** (Nuvemshop, gateways, ERPs, etc.)
+- **Você precisar testar Callbacks** (OAuth/instalação) em ambiente local
+- **Você estiver lidando com promoções/condições** que dependem de chamadas externas para cálculo/validação
+
+Exemplo de uso (substitua pela porta do seu serviço):
+
+```bash
+ngrok http 3122
+```
+
+O `ngrok` vai te dar uma URL pública **HTTPS**, algo como `https://<seu-subdominio>.ngrok-free.app`.
+
+Depois disso, você normalmente precisa:
+- Atualizar as **URLs de Callback** (quando aplicável) para apontar para a URL do `ngrok`
+- Atualizar o destino dos **Webhooks** para apontar para a URL do `ngrok`
+- Ajustar variáveis de ambiente do app (ex: `APP_URL`, `API_PUBLIC_URL`, `WEBHOOK_BASE_URL`) se o projeto usar isso
+
+---
+
+### 🏷️ Nuvemshop: promoções (descontos, fretes, etc.) e a necessidade de `ngrok`
+
+Em cenários de **promoções/condições** (por exemplo: lógica de **descontos**, **frete**, validações e regras que a plataforma precisa consultar), seu backend pode precisar receber chamadas vindas “de fora” para:
+- Simular/calcular condições
+- Validar regras em tempo real
+- Receber eventos/atualizações relacionadas à aplicação da promoção
+
+Quando isso acontece em **DEV**, é necessário que o seu serviço esteja acessível publicamente — então **`ngrok` passa a ser obrigatório** para conseguir testar de ponta a ponta.
+
+Checklist rápido em DEV:
+- Suba o backend local do app
+- Rode `ngrok` apontando para a porta do backend
+- Configure a Nuvemshop/integração para usar a URL do `ngrok` nos endpoints (callback/webhook/chamadas externas)
+- Teste a funcionalidade (desconto/frete/promoção) e monitore logs do webhook
 
 ---
 
